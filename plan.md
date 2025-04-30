@@ -2,112 +2,100 @@
 
 ---
 
-## 🔥 מטרות הפרויקט:
-
-- בניית מערכת ניהול משימות (Task Manager) מודרנית.
+## 🎯 מטרות הפרויקט:
+- מערכת ניהול משימות (Task Manager) מודרנית.
 - פיתוח Fullstack: NestJS + Vue 3 + PostgreSQL.
-- פריסה מלאה עם Docker, GitHub Actions, AWS EC2.
-- אוטומציה: בדיקות Health Production + בדיקות E2E עם Playwright.
+- פיצול לשירותים (Service-Based Architecture).
+- תקשורת אסינכרונית עם RabbitMQ.
+- פריסה ב-Docker ו-Kubernetes.
+- תהליכי CI/CD עם GitHub Actions.
+- ניטור, בדיקות UI, ותיעוד.
 
 ---
 
 ## 🛠️ שלבי עבודה עיקריים:
 
-### שלב 1: תשתיות (שבועות 1–2)
+### שלב 1: תשתית הפרויקט (שבוע 1)
+- [x] פתיחת ריפוזיטורי GitHub
+- [x] יצירת תיקיות `frontend/` ו-`backend/`
+- [x] יצירת פרויקט NestJS
+- [x] יצירת פרויקט Vue 3 עם Vite
+- [x] Commit ראשון
+- [x] סקירה על NestJS ו-Vue3
+- [x] יצירת `plan.md` (תיעוד התקדמות)
 
-- [x] פתיחת ריפוזיטורי GitHub.
-- [x] הקמת תיקיות `backend/` ו-`frontend/`.
-- [x] יצירת פרויקט NestJS (`nest new backend`).
-- [x] יצירת פרויקט Vue 3 עם Vite ו-TypeScript (`npm create vite@latest frontend`).
-- [x] Commit ראשון - מבנה בסיסי.
-- [x] סקירה בסיסית של NestJS ו-Vue 3.
-- [x] כתיבת קובץ plan.md (תיעוד מסלול עבודה).
+### שלב 2: NestJS בסיס (שבוע 2)
+- [ ] יצירת Entity `User` + DTO
+- [ ] בניית `UsersService` בסיסי
+- [ ] יצירת API `auth/register` ב־Controller
+- [ ] חיבור ל־PostgreSQL עם TypeORM
+- [ ] בדיקות ראשוניות עם Postman
 
----
+### שלב 3: Dockerization (שבוע 3)
+- [ ] יצירת Dockerfile ל־Backend
+- [ ] כתיבת docker-compose כולל PostgreSQL
+- [ ] בדיקה שהמערכת רצה מקומית עם Docker
 
-### שלב 2: Backend Development (שבועות 2–4)
+### שלב 4: Frontend בסיסי (שבוע 4)
+- [ ] דף התחברות + טופס הרשמה
+- [ ] שמירת Token ב־LocalStorage
+- [ ] Route Guard לפי התחברות
+- [ ] עיצוב בסיסי עם TailwindCSS
 
-- [ ] בניית Entity `User` עם DTO.
-- [ ] בניית `UsersService` (לוגיקת יצירה ואחזור).
-- [ ] בניית `UsersController` עם Endpoints.
-- [ ] חיבור ל-PostgreSQL עם TypeORM.
-- [ ] בדיקות רישום משתמש דרך Postman.
+### שלב 5: Authentication מלא (שבוע 5)
+- [ ] יצירת API `auth/login` עם JWT
+- [ ] פונקציות Login / Logout מלאות
+- [ ] בדיקה כוללת עם שמירת session
 
----
+### שלב 6: Tasks CRUD (שבוע 6)
+- [ ] יצירת Entity `Task`
+- [ ] יצירת שירות `TasksService`
+- [ ] בניית דפי ניהול משימות
+- [ ] Kanban Board להצגת סטטוסים
 
-### שלב 3: Dockerization (שבוע 4)
+### שלב 6.5: שילוב RabbitMQ
+- [ ] התקנת RabbitMQ ב־docker-compose
+- [ ] שליחת `task_created` מ־tasks-service
+- [ ] צריכת האירוע ב־notifications-service
+- [ ] הדפסת ההתראה כפעולה התחלתית
 
-- [ ] כתיבת Dockerfile ל-Backend.
-- [ ] יצירת `docker-compose.yml` ל-Backend + DB.
-- [ ] בדיקה מקומית שהכל רץ עם Docker Compose.
+### שלב 6.6: פיצול לשירותים
+- [ ] חלוקת קוד ל־`tasks-service` ו־`notifications-service`
+- [ ] Dockerfile עצמאי לכל שירות
+- [ ] הפעלת RabbitMQ בין השירותים
 
----
+### שלב 7: CI/CD (שבוע 7)
+- [ ] כתיבת GitHub Actions ל־Build ו־Push
+- [ ] העלאה ל־DockerHub
 
-### שלב 4: Frontend Development (שבועות 4–5)
+### שלב 8: פריסה ל-AWS (שבוע 8)
+- [ ] יצירת שרת EC2 באמזון
+- [ ] התקנת Docker ו־Docker Compose
+- [ ] העלאת קונטיינרים לאוויר
 
-- [ ] בניית דף התחברות (Login) ב-Vue 3.
-- [ ] חיבור API `/auth/register` לפרונט.
-- [ ] שמירת טוקן ב-LocalStorage.
-- [ ] בניית Route Guards (הגנת ניווט לפי התחברות).
-- [ ] שיפור עיצוב בסיסי עם TailwindCSS.
+### שלב 9: ניטור ובדיקות (שבוע 9)
+- [ ] יצירת Endpoint `/health`
+- [ ] GitHub Action לבדיקה כל 5 דקות
+- [ ] התקנת Playwright
+- [ ] כתיבת בדיקות UI End-to-End
 
----
+### שלב 10: Polish ו־QA (שבוע 10)
+- [ ] Toasts, Loaders, UX עדין
+- [ ] README מקצועי כולל תמונות ופקודות
+- [ ] בדיקה סופית ו־Commit אחרון
 
-### שלב 5: Authentication Flow (שבוע 5)
-
-- [ ] בניית `/auth/login` עם JWT ב-Backend.
-- [ ] חיבור ל-Login דרך הפרונטנד.
-- [ ] פונקציות Login ו-Logout.
-- [ ] בדיקה שהאבטחה עובדת תקין.
-
----
-
-### שלב 6: Projects & Tasks Management (שבוע 6)
-
-- [ ] בניית Entities `Project` ו-`Task`.
-- [ ] בניית CRUD מלא ל-Projects ו-Tasks.
-- [ ] בניית דף ניהול פרויקטים ומשימות בפרונטנד.
-- [ ] בניית Kanban Board בסיסי להצגת משימות לפי סטטוס.
-
----
-
-### שלב 7: DevOps ו-CI/CD (שבוע 7)
-
-- [ ] פתיחת חשבון DockerHub.
-- [ ] כתיבת GitHub Actions ל-Build & Push ל-DockerHub.
-- [ ] בדיקת הרצת הפייפליין.
-
----
-
-### שלב 8: פריסה ל-AWS EC2 (שבוע 8)
-
-- [ ] פתיחת שרת EC2 באמזון (Free Tier).
-- [ ] התקנת Docker + Docker Compose בשרת.
-- [ ] פריסה של Docker Images בשרת.
-- [ ] בדיקת גישה חיצונית לשרת דרך דומיין/כתובת IP.
-
----
-
-### שלב 9: Monitoring + בדיקות אוטומטיות (שבוע 9)
-
-- [ ] בניית API Health (`/api/health`) ב-Backend.
-- [ ] יצירת Scheduled GitHub Action לבדוק בריאות כל 5 דקות.
-- [ ] התקנת Playwright לפרויקט.
-- [ ] כתיבת בדיקות End-to-End לפרונט (רישום, התחברות, מעבר מסכים).
-- [ ] שילוב בדיקות Playwright בפייפליין CI.
+### שלב 11: פריסה ב-Kubernetes (שבוע 11)
+- [ ] Docker Image לכל שירות
+- [ ] כתיבת קובצי Deployment ו־Service
+- [ ] Namespace ייעודי לפרויקט
+- [ ] שימוש ב־ConfigMap / Secret
+- [ ] RabbitMQ ו־PostgreSQL ב־K8s
+- [ ] הרצה מלאה ב־Minikube או AWS EKS
 
 ---
 
-### שלב 10: Polish & Professional Touch (שבוע 10)
+## ✅ הערות:
 
-- [ ] שדרוג עיצוב ב-TailwindCSS.
-- [ ] הוספת Toast Notifications ו-Loading Indicators.
-- [ ] כתיבת README מקצועי לפרויקט.
-- [ ] בדיקות סופיות ותיקוני באגים.
-- [ ] Commit אחרון "Production Ready 🚀".
-
----
-
-## 📋 עקרונות עבודה:
-
-- כל שלב
+- תעדכן `[x]` ליד כל משימה שבוצעה.
+- תתחזק את הקובץ הזה בכל יום עבודה.
+- תעשה commit לקובץ עם הודעה ברורה.
