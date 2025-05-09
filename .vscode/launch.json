@@ -4,16 +4,14 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Debug NestJS",
-      "args": ["${workspaceFolder}/src/main.ts"],
-      "runtimeArgs": ["-r", "ts-node/register/transpile-only"],
-      "sourceMaps": true,
-      "cwd": "${workspaceFolder}",
+      "name": "Debug NestJS Backend",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/backend/src/main.ts",
+      "runtimeArgs": ["-r", "ts-node/register"],
+      "cwd": "${workspaceFolder}/backend",
       "protocol": "inspector",
-      "env": {
-        "TS_NODE_PROJECT": "tsconfig.json"
-      },
-      "skipFiles": ["<node_internals>/**"]
+      "runtimeExecutable": "node",
+      "outFiles": ["${workspaceFolder}/**/*.js"]
     }
   ]
 }
