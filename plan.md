@@ -30,9 +30,9 @@
 
 - [x] יצירת Entity `User` + DTO
 - [x] בניית `UsersService` בסיסי
-- [ ] יצירת API `auth/register` ב־Controller
-- [ ] חיבור ל־PostgreSQL עם TypeORM
-- [ ] בדיקות ראשוניות עם Postman
+- [x] יצירת API `auth/register` ב־Controller
+- [x] חיבור ל־PostgreSQL עם TypeORM
+- [x] בדיקות ראשוניות עם Postman
 
 ### שלב 3: Dockerization (שבוע 3)
 
